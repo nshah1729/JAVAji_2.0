@@ -1,13 +1,13 @@
-package com.company.Recursion;
+package com.company.RecursionPepCoding;
 
 import java.util.Scanner;
 
 public class PrintDecreasing {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.print("Enter the value of n: ");
-        int n=sc.nextInt();
-        printDecreasing(n);
+//        System.out.print("Enter the value of n: ");
+//        int n=sc.nextInt();
+        printDecreasing(5);
     }
 
     private static void printDecreasing(int n) {
