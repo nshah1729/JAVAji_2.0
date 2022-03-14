@@ -21,10 +21,7 @@ public class DisplayArrayElementsUsingRecursion {
     }
     private static void printRev(int[] a,int i) {
         //Base Case:
-        if(i==0){
-            System.out.print(" "+a[i]);
-            return;
-        }
+        if(i==-1) return;
 
         System.out.print(" "+a[i]);
         //Faith:
