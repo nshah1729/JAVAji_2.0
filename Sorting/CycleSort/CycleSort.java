@@ -6,20 +6,24 @@ import java.util.Scanner;
 public class CycleSort {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        int[] a={3,5,4,1,2};
+        int[] a={3,5,2,1,4};
         cycle(a);
         System.out.println(Arrays.toString(a));
     }
 
     private static void cycle(int[] a) {
-        for(int i=0;i<a.length;i++){
-            int correctIndex=a[i]-1;
-            if(i!=a[i]-1){  //If the Element is not at its correct index
-                int temp=a[i];
-                a[i]=a[correctIndex];
-                a[correctIndex]=temp;
-            }
 
+        for(int i=0;i<a.length;i++){
+
+            while(i!=a[i]-1) {  //Till the Element at "i" is not at its correct index
+
+                int correctIndex = a[i] - 1;
+                       //Swap
+                    int temp = a[i];
+                    a[i] = a[correctIndex];
+                    a[correctIndex] = temp;
+
+            }
         }
     }
 }
