@@ -6,9 +6,22 @@ import java.util.Scanner;
 public class CycleSort {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        int[] a={3,5,2,1,4};
-        cycle(a);
+        int[] a={0,1,2,3};
+//        cycle(a);
+        cycling(a);
         System.out.println(Arrays.toString(a));
+    }
+
+    private static void cycling(int[] a) {
+        int i=0;
+        while(i<a.length){
+            int correctIndex=a[i]-1;
+            if(a[i]!=a[correctIndex]){
+                int temp=a[i];
+                a[i]=a[correctIndex];
+                a[correctIndex]=temp;
+            }
+        }
     }
 
     private static void cycle(int[] a) {
