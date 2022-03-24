@@ -16,14 +16,10 @@ public class SetMismatch {
             if(a[i]!=a[correctIndex])swap(a,i,correctIndex);
             else i++;
         }
-        int[] ans=new int[2];
         for (int j = 0; j < a.length; j++) {
-            if(a[j]!=j+1){
-                ans[0]=a[j];
-                ans[1]=j+1;
-            }
+            if(a[j]!=j+1) return new int[]{a[j],j+1};
         }
-        return ans;
+        return new int[]{-1,-1};
     }
 
     private static void swap(int[] a, int i, int correctIndex) {
