@@ -13,14 +13,16 @@ class MissingNumber {
            int i=0;
            while(i< a.length){
                int correctIndex=a[i];
-               if(a[i]<a.length&&a[i]!=a[correctIndex]){
+               if(a[i]<a.length&&a[i]!=a[correctIndex]){//If you find the nth element, ignore it!
                    swap(a,i,correctIndex);
                }else i++;
            }
            //checking missing element
             for (int j = 0; j < a.length; j++) {
+                //Case 2:When the missing number is [0,n)
                 if(a[j]!=j)return j;
             }
+            //Case 2:{When the missing number is 'n'}
             return a.length;
         }
 
