@@ -8,10 +8,10 @@ public class BinSearch {
         int[] a= {2,3,4,5,6,8,9,12};
         System.out.print("Enter target: ");
         int target= sc.nextInt();
-        System.out.println(binSeach(a,target));
+        System.out.println(binSearch(a,target));
     }
 
-    private static boolean binSeach(int[] a, int target) {
+    private static boolean binSearch(int[] a, int target) {
         int s=0,e=a.length-1;
         while(s<=e){
             int m=(s+e)/2;
