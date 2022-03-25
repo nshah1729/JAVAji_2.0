@@ -15,7 +15,7 @@ public class BinSearch {
     //Binary Search using Recursion:
     private static int binSearchRec(int[] a, int target,int s,int e) {
         int m=(s+e)/2;
-        if(a[m]==target)return m;
+        if(a[m]==target)return m;//Base Case
         if(a[m]>target)return binSearchRec(a,target,s,m-1);
         if(a[m]<target)return binSearchRec(a,target,m+1,e);
         return -1;
