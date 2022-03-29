@@ -1,7 +1,6 @@
 package com.company.Arrays;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class KthMissingPositiveNumber {
     public static void main(String[] args) {
@@ -12,7 +11,7 @@ public class KthMissingPositiveNumber {
     private static int miss(int[] a,int k) {
         ArrayList<Integer> list= new ArrayList<>();
         for (int i = 1; i <=a[a.length-1]+k ; i++) {
-            boolean is_found=false;
+             boolean is_found=false;
             for (int j = 0; j < a.length; j++) {
                 if(i==a[j]){
                     is_found=true;
