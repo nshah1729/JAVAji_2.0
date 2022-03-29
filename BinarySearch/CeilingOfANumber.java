@@ -7,10 +7,13 @@ public class CeilingOfANumber {
         Scanner sc=new Scanner(System.in);
         int[] a={2,3,5,9,14,15,16,17,18};
 //        int target=sc.nextInt();
-        System.out.println(searchCeil(a,8));
+        System.out.println(searchCeil(a,19));
     }
 
     private static int searchCeil(int[] a, int target) {
+
+        if(target>a[a.length-1])return -1;//If the target is > the greatest number of the array.
+
        int s=0;int e=a.length-1;
        while(s<=e){
            int m=s+(e-s)/2;
