@@ -11,6 +11,6 @@ public class PeakIndexInAMountainArray {
     }
 
     private static int peak(int[] a) {
-
+return 1;
     }
 }
