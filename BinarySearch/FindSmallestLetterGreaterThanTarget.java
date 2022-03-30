@@ -14,8 +14,9 @@ public class FindSmallestLetterGreaterThanTarget {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         char[] letters={'a','b','f','h'};
-        char c='b';
-        System.out.println(small_1(letters,c));
+        char c='a';
+//        System.out.println(small_1(letters,c));
+        System.out.println(small(letters,c));
 
     }
     //Method 1:
