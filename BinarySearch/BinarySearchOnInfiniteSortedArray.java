@@ -7,12 +7,13 @@ public class BinarySearchOnInfiniteSortedArray {
         Scanner sc=new Scanner(System.in);
         int[] a={2,3,5,9,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28};
 //        int target=sc.nextInt();
-        System.out.println(searchInfi(a,19));
+        System.out.println(searchInfi(a,2));
     }
 
     private static int searchInfi(int[] a, int target) {
         int s=0,e=1;
         while(target>a[e]){
+            s=e;
             e*=2;
             if(a[e]>target)break;
         }
