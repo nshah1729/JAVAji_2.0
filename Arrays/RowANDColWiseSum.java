@@ -23,7 +23,6 @@ public class RowANDColWiseSum {
                 sumColWise +=a[row][col];
             }
             System.out.println(col+1+"th col sum is: "+sumColWise);
-            sumColWise=0;
         }
     }
 
@@ -34,7 +33,6 @@ public class RowANDColWiseSum {
                 sumRowWise +=a[row][col];
             }
             System.out.println(row+1+"th row sum is: "+sumRowWise);
-            sumRowWise=0;
         }
     }
 }
