@@ -7,14 +7,14 @@ import java.util.Scanner;
 public class FindFirstandLastPositionOfElementInSortedArray {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        int[] a={5,7,7,7,8,8,10};
-        int target=10;
+        int[] a={5,7,7,7,7,8,8,10};
+        int target=2;
         System.out.println(Arrays.toString(firstLast(a,target)));
 
     }
 
     private static int[] firstLast(int[] a, int target) {
-        int[] ans=new int[2];
+        int[] ans= {-1,-1};
         ans[0]=search(a,target,true);
         if(ans[0]!=-1)ans[1]=search(a,target,false);
       return ans;
@@ -28,7 +28,7 @@ public class FindFirstandLastPositionOfElementInSortedArray {
             if (a[m] < target) s = m + 1;
             else if (a[m] > target) e = m - 1;
             else {
-                ans = m;
+                ans = m;//Potential answer is found!
                 if (findStartIndex) e = m - 1;
                 else s = m + 1;
             }
