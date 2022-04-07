@@ -5,13 +5,15 @@ import java.util.Arrays;
 public class RotateArrayByK {
     public static void main(String[] args) {
         int[] a={1,2,3,4,5};
-//        rotate(a,1);
-        int[] ans=rotateBrute(a,4);
-        System.out.println(Arrays.toString(ans));
+        rotate(a,-1);
+//        int[] ans=rotateBrute(a,4);
+//        System.out.println(Arrays.toString(ans));
+        System.out.println(Arrays.toString(a));
     }
 
     private static void rotate(int[] a, int k) {
         k=k%a.length;
+        if(k<0)k+=a.length;
         //Reversing the First Part:
        int s=0,e=a.length-k-1;
         while(s<=e){

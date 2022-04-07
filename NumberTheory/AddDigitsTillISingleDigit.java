@@ -3,7 +3,8 @@ package com.company.NumberTheory;
 public class AddDigitsTillISingleDigit {
     public static void main(String[] args) {
         int n=38;
-        System.out.println(add(n));
+//        System.out.println(add(n));
+        System.out.println(addRecursion(n));
     }
 
     private static int add(int n) {
@@ -19,9 +20,10 @@ public class AddDigitsTillISingleDigit {
         return n;
     }
 
-//    private static int addRecursion(int n) {
-//        //Base Case:
-//        if(n<9)return n;
-//        return
-//    }
+    private static int addRecursion(int n) {
+        //Base Case:
+        if(n==0)return 0;
+        if(n%9==0)return 9;
+        return n%9;
+    }
 }
