@@ -1,12 +1,14 @@
 package com.company.BinarySearch;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BinarySearchOnInfiniteSortedArray {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int[] a={2,3,5,9,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28};
-        System.out.println(searchInfi(a,14));
+
+        System.out.println(searchInfi(a,20));
     }
 
     private static int searchInfi(int[] a, int target) {
