@@ -1,6 +1,6 @@
 package com.company.NumberTheory;
 
-public class AddDigitsTillISingleDigit {
+public class AddDigitsTillSingleDigit {
     public static void main(String[] args) {
         int n=38;
 //        System.out.println(add(n));
