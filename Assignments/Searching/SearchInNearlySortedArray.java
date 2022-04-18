@@ -8,6 +8,7 @@ public class SearchInNearlySortedArray {
         System.out.println(searchin(a,2));
         System.out.println(searchin(a,13));
         System.out.println(searchin(a,30));
+
     }
 
     private static int searchin(int[] a, int t) {
