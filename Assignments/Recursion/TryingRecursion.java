@@ -8,8 +8,15 @@ public class TryingRecursion {
 //        zigzag(2);
 //        toh(3,1,2,3);
         int[] a={1,2,3,4};
-        printReverse(a, a.length-1);
+//        printReverse(a, a.length-1);
+        System.out.println(max(a,0));
     }
+
+    private static int max(int[] a,int idx){
+        if(idx==a.length-1)return a[a.length-1];
+        return Math.max(a[idx], max(a, idx + 1));
+    }
+
     private static void toh(int n,int a,int b,int c){
         if(n==0)return;
         toh(n-1,a,c,b);
