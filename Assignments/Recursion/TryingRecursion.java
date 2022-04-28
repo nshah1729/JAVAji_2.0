@@ -1,5 +1,7 @@
 package com.company.Assignments.Recursion;
 
+import java.util.Arrays;
+
 public class TryingRecursion {
     public static void main(String[] args) {
 //        pdi(5);
@@ -16,6 +18,11 @@ public class TryingRecursion {
 //        System.out.println(LastIndexAliter(a,a.length-1,4));
 //        AllIndices(a,0,4);
 //        System.out.println(AllIndices(a,a.length-1,4));
+
+         int[] ans= AllIndicesAliter(a,0,4,0);
+        System.out.println(Arrays.toString(ans));
+        String s="HELLLO";
+        System.out.println(s.substring(1,2));
     }
 
     private static int max(int[] a,int idx){
@@ -119,4 +126,18 @@ public class TryingRecursion {
         AllIndices(a,idx+1,target);
     }
 
+    private static int[] AllIndicesAliter(int[] a,int idx,int target,int fsf){
+        if(idx==a.length){
+            return new int[fsf];
+        }
+        int[] ans;
+        if(a[idx]==target){
+            ans = AllIndicesAliter(a, idx + 1, target, fsf + 1);
+            ans[fsf]=idx;
+        }
+        else{
+            ans = AllIndicesAliter(a, idx + 1, target, fsf);
+        }
+        return ans;
+    }
 }
