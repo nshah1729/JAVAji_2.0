@@ -4,17 +4,22 @@ public class TryingRecursion {
     public static void main(String[] args) {
 //        pdi(5);
 //        System.out.println(fac(10));
-//        System.out.println(powerLog(2,3));
 //        zigzag(2);
 //        toh(3,1,2,3);
         int[] a={1,2,3,4};
 //        printReverse(a, a.length-1);
-        System.out.println(max(a,0));
+//        System.out.println(max(a,0));
+//        System.out.println(min(a,0));
     }
 
     private static int max(int[] a,int idx){
         if(idx==a.length-1)return a[a.length-1];
         return Math.max(a[idx], max(a, idx + 1));
+    }
+
+    private static int min(int[] a,int idx){
+        if(idx==a.length-1)return a[a.length-1];
+        return Math.min(a[idx], min(a, idx + 1));
     }
 
     private static void toh(int n,int a,int b,int c){
