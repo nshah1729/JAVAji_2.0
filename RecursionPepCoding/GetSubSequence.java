@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class GetSubSequence {
     public static void main(String[] args) {
-        String s="abc";
+        String s="123";
         ArrayList<String> ans=getss(s);
         System.out.println(ans);
     }
