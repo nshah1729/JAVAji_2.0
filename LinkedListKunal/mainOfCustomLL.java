@@ -8,20 +8,12 @@ public class mainOfCustomLL {
         l.addEnd(232);
         l.addEnd(13);
         l.addEnd(44);
-        l.addEnd(44);
-        l.addEnd(44);
-        l.addEnd(44);
         l.insert(121,2);
 
         l.display();
         System.out.println();
-        System.out.println(l.delFirst());
+        l.insertRecursion(1729,3);
         l.display();
-        System.out.println();
-        l.delLast();
-        l.display();
-        System.out.println();
-        l.deleteIndex(2);
-        l.display();
+
     }
 }

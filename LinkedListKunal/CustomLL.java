@@ -44,6 +44,17 @@ public class CustomLL {
         temp.next=node;
         size++;
     }
+    public void insertRecursion(int val,int index){
+        Node n=head;
+        n=n.next;
+        if(index==06){
+            Node node=new Node(val);
+            node.next=n.next;
+            n.next=node;
+            return;
+        }
+        insertRecursion(val,index-1);
+    }
     public void addEnd(int val){
     if(tail==null){
         addBeg(val);
