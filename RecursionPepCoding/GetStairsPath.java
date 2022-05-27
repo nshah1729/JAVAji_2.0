@@ -20,8 +20,7 @@ public class GetStairsPath {
             return bres;
         }
         else if(n<0){
-            ArrayList<String> bres=new ArrayList<>();
-            return bres;
+            return new ArrayList<>();
         }
 
         ArrayList<String> paths1=getsp(n-1);

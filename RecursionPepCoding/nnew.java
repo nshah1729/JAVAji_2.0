@@ -15,8 +15,9 @@ public class nnew {
 //        ArrayList<String> ans=gss("abc");
 //        System.out.println(ans);
         Scanner sc=new Scanner(System.in);
-        String str=sc.nextLine();
-        ArrayList<String> ans=getKPC(str);
+        System.out.print("Enter the number: ");
+        String s=sc.nextLine();
+        ArrayList<String> ans= getKPC(s);
         System.out.println(ans);
     }
 
@@ -107,13 +108,14 @@ public class nnew {
         }
         char ch=str.charAt(0);
         String ros=str.substring(1);
+
         ArrayList<String> rres=getKPC(ros);
         ArrayList<String> ans=new ArrayList<>();
-        String codeforch=codes[ch-'0'];
-        for(int i=0;i<codeforch.length();i++){
-            char chcode=codeforch.charAt(i);
+
+        String var=codes[ch-'0'];
+        for(int i=0;i<var.length();i++){
             for(String val:rres){
-                ans.add(chcode+val);
+                ans.add(var.charAt(i)+val);
             }
         }
         return ans;
