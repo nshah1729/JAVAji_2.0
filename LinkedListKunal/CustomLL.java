@@ -96,6 +96,29 @@ public class CustomLL {
         }
         prev.next=nexxt;
     }
+    public static CustomLL merge(CustomLL first,CustomLL second){
+        Node f=first.head;
+        Node s=second.head;
+        CustomLL ans=new CustomLL();
+        while(f!=null&&s!=null){
+            if(f.val>s.val){
+                ans.addEnd(s.val);
+                s=s.next;
+            }else{
+                ans.addEnd(f.val);
+                f=f.next;
+            }
+        }
+        while(f!=null){
+            ans.addEnd(f.val);
+            f=f.next;
+        }
+        while(s!=null){
+            ans.addEnd(s.val);
+            s=s.next;
+        }
+        return ans;
+    }
 
     private class Node{
        private int val;

@@ -3,7 +3,7 @@ package com.company.StackPepCodingQuestions;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Implement {
+public class DuplicateBrackets {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
             System.out.print("Enter the line: ");

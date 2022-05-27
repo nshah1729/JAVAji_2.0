@@ -2,18 +2,28 @@ package com.company.LinkedListKunal;
 
 public class mainOfCustomLL {
     public static void main(String[] args) {
-        CustomLL l=new CustomLL();
-        l.addBeg(4);
-        l.addBeg(2);
-        l.addEnd(232);
-        l.addEnd(13);
-        l.addEnd(44);
-        l.insert(121,2);
+        CustomLL f=new CustomLL();
+        f.addEnd(1);
+        f.addEnd(1);
+        f.addEnd(2);
+        f.addEnd(5);
+        f.addEnd(9);
+        f.addEnd(91);
+        CustomLL s=new CustomLL();
+        s.addEnd(21);
+        s.addEnd(121);
+        s.addEnd(211);
+        s.addEnd(511);
+        s.addEnd(911);
+        s.addEnd(9111);
 
-        l.display();
+        f.display();
         System.out.println();
-        l.insertRecursion(1729,3);
-        l.display();
+        s.display();
+        System.out.println();
 
+        CustomLL ans=CustomLL.merge(f,s);
+
+        ans.display();
     }
 }
