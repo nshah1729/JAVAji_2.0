@@ -28,6 +28,7 @@ public class GetStairsPath {
         ArrayList<String> paths3=getsp(n-3);
 
         ArrayList<String> ans=new ArrayList<>();
+
         for(String str:paths1)ans.add(1+str);
         for(String str:paths2)ans.add(2+str);
         for(String str:paths3)ans.add(3+str);
