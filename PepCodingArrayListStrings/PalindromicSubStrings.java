@@ -1,8 +1,6 @@
-package com.company.LinkedListKunal;
+package com.company.PepCodingArrayListStrings;
 
-import java.util.*;
-
-public class fg {
+public class PalindromicSubStrings {
     public static void main(String[] args) {
         String s="abccbc";
         for (int i = 0; i < s.length(); i++) {
@@ -26,5 +24,4 @@ public class fg {
         }
         return true;
     }
-
 }

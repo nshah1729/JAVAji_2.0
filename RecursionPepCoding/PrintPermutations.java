@@ -9,7 +9,7 @@ public class PrintPermutations {
     }
     public static void printPermutations(String s, String ans) {
         if(s.length()==0){
-            System.out.println(ans);
+            System.out.println(ans+" ");
             return;
         }
         for(int i=0;i<s.length();i++){
