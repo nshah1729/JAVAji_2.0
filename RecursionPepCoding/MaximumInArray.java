@@ -12,10 +12,10 @@ public class MaximumInArray {
     private static int Arrmax(int[] a, int i) {
         //Base Case:
         if(i==a.length)return a[i-1];
-
-        int max=a[i];
-        int temp=Arrmax(a,i+1);
-        if(Arrmax(a,i+1)>max)max=Arrmax(a,i+1);
-        return max;
+        return Math.max(a[i],Arrmax(a,i+1));
+//        int max=a[i];
+//        int temp=Arrmax(a,i+1);
+//        if(Arrmax(a,i+1)>max)max=Arrmax(a,i+1);
+//        return max;
     }
 }

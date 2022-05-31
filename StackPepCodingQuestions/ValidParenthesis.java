@@ -33,8 +33,7 @@ public class ValidParenthesis {
             }
 
         }
-         if(s.size()>0)return false;
-        return true;
+        return s.size() <= 0;
 
     }
 }
