@@ -7,10 +7,9 @@ import java.util.Stack;
 //True means balanced
 public class ValidParenthesis {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the line: ");
-        String str = sc.nextLine();
-        System.out.println(check(str));
+        String s3="([(a + b) + {(c + d) * (e / f)}]";
+        System.out.println(check(s3));
+        System.out.println(check("]"));
     }
 
     private static boolean check(String str) {
