@@ -18,7 +18,6 @@ public class NextGreaterElementToRight {
     private static int[] NGR(int[] a) {
         Stack<Integer> st = new Stack<>();
         int[] ans=new int[a.length];
-//        ArrayList<Integer> ans=new ArrayList<>();
         ans[a.length-1]=-1;
         st.push(Math.max(-1, a[a.length - 1]));
         for (int i = a.length-2; i >=0; i--) {
