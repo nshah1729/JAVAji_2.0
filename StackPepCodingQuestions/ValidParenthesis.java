@@ -1,7 +1,6 @@
 package com.company.StackPepCodingQuestions;
 
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 //False means not balanced
 //True means balanced
