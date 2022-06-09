@@ -1,4 +1,4 @@
-package com.company.StackPepCodingQuestions;
+package com.company.StackPepCodingQuestions.NextElementVariations;
 
 import java.util.*;
 
@@ -9,8 +9,8 @@ public class NextGreaterElementToRight {
        int[] ans=NGR(a);
 //        for (int i = 0; i < a.length; i++) System.out.println("Next greater for "+a[i]+" is "+ ans[i]);
 
-        System.out.println(Arrays.toString(ans));
-        System.out.println(Arrays.toString(NGRAlt(a)));
+//        System.out.println(Arrays.toString(ans));
+        System.out.println(Arrays.toString(NGRAlt(b)));
     }
 
     private static int[] NGR(int[] a) { //O(n) since while loop rarely runs
