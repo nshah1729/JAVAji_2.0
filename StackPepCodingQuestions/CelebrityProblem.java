@@ -21,7 +21,7 @@ public class CelebrityProblem {
             
             else if(a[j][i]==1)s.push(i);//It means that j knows i ∴ j!=celeb
             
-        }//Only 1 person will remain for contendership to be a celebrity
+        }//Only 1 person will remain for contender to be a celebrity
         for (int i = 0; i <a.length ; i++) {
             if(a[s.peek()][i]==1){
                 celeb="none";
