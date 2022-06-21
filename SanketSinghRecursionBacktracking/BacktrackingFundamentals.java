@@ -6,14 +6,7 @@ import java.util.Set;
 
 public class BacktrackingFundamentals {
     public static void main(String[] args) {
-//        findPaths(0,0,3,3,"");
-//        System.out.println(totalPaths);
-//        findPathsLinear(0,5,"");
-//        System.out.println("Total Paths "+LinearTotalPaths);
-//        permu2("aac","",new HashSet<String>());
-        permu2("aaaaaaaaac","");
-//        System.out.println(ans);
-
+        permu2("abcd","");
     }
 
     static int totalPaths = 0;
@@ -107,24 +100,6 @@ public class BacktrackingFundamentals {
             permu1(ros,asf+ch);
         }
     }
-//    public static void permu2(String a, String asf,HashSet<String> set) {
-//        if (a.length() == 0) {
-//            if(!set.contains(asf)){
-//                System.out.println(asf);
-//                set.add(asf);
-//            }
-//
-//            return;
-//        }
-//
-//        ArrayList<String> ans = new ArrayList<>();
-//
-//        for (int i = 0; i < a.length(); i++) {
-//            char ch=a.charAt(i);
-//            String ros=a.substring(0,i)+a.substring(i+1);
-//            permu2(ros,asf+ch,set);
-//        }
-//    }
 
     public static void permu2(String a, String asf){
         if(a.length()==0){
