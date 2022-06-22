@@ -1,9 +1,6 @@
 package com.company.TreesPepCoding;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class CustomTree {
 
@@ -121,15 +118,118 @@ public class CustomTree {
 
     public static void removeLeaves(Node node){
         for (int i = node.children.size()-1; i >=0; i--) {
-            if()
+            Node child=node.children.get(i);
+            if(child.children.size()==0){
+                node.children.remove(child);
+            }
         }
         for(Node child:node.children){
             removeLeaves(child);
         }
     }
 
+    public static void linearize(Node node){
+        for(Node child:node.children){
+            linearize(child);
+        }
+        while(node.children.size()>1){
+            Node lc=node.children.remove(node.children.size()-1);
+            Node slc=node.children.get(node.children.size()-1);
+            Node tail=getTail(slc);
+            tail.children.add(lc);
+        }
+    }
+
+    public static boolean find(Node node,int t){
+        boolean ans=node.data==t;
+        for (Node child: node.children){
+            ans=ans||find(child,t);
+        }
+        return ans;
+    }
+
+    public static boolean findAliter(Node node,int t){
+        if(node.data==t)return true;
+
+        for (Node child: node.children){
+            if(find(child,t))return true;
+        }
+        return false;
+    }
+
+    public static ArrayList<Integer> nodeToRootPath(Node node,int t){
+        if(node.data==t){
+            ArrayList<Integer> ans=new ArrayList<>();
+            ans.add(node.data);
+            return ans;
+        }
+        for (Node child: node.children){
+            ArrayList<Integer> ptc=nodeToRootPath(child,t);
+            if(ptc.size()>0){
+                ptc.add(node.data);
+                return ptc;
+            }
+        }
+        return new ArrayList<>();
+
+    }
+
+    public static int LCA(Node node,int t1,int t2){
+        ArrayList<Integer> l1=nodeToRootPath(node,t1);
+        ArrayList<Integer> l2=nodeToRootPath(node,t2);
+       int i=l1.size()-1;
+       int j=l2.size()-1;
+       while(i>=0&&j>=0&&l1.get(i)==l2.get(j)){
+           i--;j--;
+       }
+       i++;j++;
+        return l1.get(i);
+    }
+
+    public static int distanceBetweenNodes(Node node,int t1,int t2){
+        ArrayList<Integer> l1=nodeToRootPath(node,t1);
+        ArrayList<Integer> l2=nodeToRootPath(node,t2);
+        int i=l1.size()-1;
+        int j=l2.size()-1;
+        while(i>=0&&j>=0&&l1.get(i)==l2.get(j)){
+            i--;j--;
+        }
+        i++;j++;
+        return i+j;
+    }
+
+    public static boolean similar(Node n1,Node n2){
+        if(n1.children.size()!=n2.children.size())return false;
+        for(int i=0;i<n1.children.size();i++){
+            Node c1=n1.children.get(i);
+            Node c2=n2.children.get(i);
+            if(!similar(c1,c2))return false;
+        }
+        return true;
+    }
+
+    public static boolean mirror(Node n1,Node n2){
+        if(n1.children.size()!=n2.children.size())return false;
+        for(int i=0;i<n1.children.size();i++){
+            Node c1=n1.children.get(i);
+            Node c2=n2.children.get(n1.children.size()-i-1);
+            if(!similar(c1,c2))return false;
+        }
+        return true;
+    }
+
+    private static Node getTail(Node node) {
+        while(node.children.size()>0){
+            node=node.children.get(0);
+        }
+        return node;
+    }
+
     public static void main(String[] args) {
-        int[] a={10,20,40,-1,50,-1,-1,30,60,-1,70,-1,-1};
+//        int[] a={10,20,40,-1,50,-1,-1,30,60,-1,70,-1,-1};
+        int[] a={10,20,40,80,-1,90,-1,-1,50,-1,-1,30,60,-1,70,-1,-1};
+        int[] b={10,20,40,50,-1,-1,30,60,-1,70,80,-1,90,-1,-1,-1};
+//        int[] b={22,21,45,-1,10,-1,-1,0,630,-1,790,-1,-1};
 //        int[] a={10};
         Stack<Node> s=new Stack<>();
         Node root = null;
@@ -149,6 +249,26 @@ public class CustomTree {
 
             }
         }
+
+        Stack<Node> s1=new Stack<>();
+        Node root2 = null;
+        for (int i = 0; i < b.length; i++) {
+            if(b[i]==-1){
+                s1.pop();
+            }else{
+                Node t=new Node(b[i]);
+                if(s1.size()>0){
+                    s1.peek().children.add(t);
+                    s1.push(t);
+                }
+                else{
+                    s1.push(t);
+                    root2=t;
+                }
+
+            }
+        }
+
         
 //        display(root);
 //        System.out.println("Size of the Tree is: "+size(root));
@@ -157,7 +277,11 @@ public class CustomTree {
 //        traversal(root);
 //        levelOrdertraversalLineWise(root);
 //        levelOrdertraversalLineWiseZigZag(root);
-        removeLeaves(root);
-        display(root);
+//        linearize(root);
+//        display(root);
+//        System.out.println(LCA(root,60,30));
+//        System.out.println(distanceBetweenNodes(root,60,70));
+//        System.out.println(similar(root,root2));
+        System.out.println(mirror(root,root2));
     }
 }
