@@ -3,6 +3,10 @@ package com.company.TreesPepCoding;
 import java.util.*;
 
 public class CustomTree {
+    static int height;
+    static int max=Integer.MIN_VALUE;
+    static int min=Integer.MAX_VALUE;
+    static int size;
 
     static class Node{
         int data;
@@ -11,6 +15,17 @@ public class CustomTree {
         }
         ArrayList<Node> children= new ArrayList<>();
 
+    }
+
+    public static void multisolver(Node node, int depth){
+        size++;
+        max=Math.max(max,node.data);
+        height=Math.max(height,depth);
+        min=Math.min(min,node.data);
+
+        for (Node child:node.children){
+            multisolver(child,depth+1);
+        }
     }
 
     public static void display(Node node){
@@ -225,9 +240,42 @@ public class CustomTree {
         return node;
     }
 
+    private static boolean isSymmetric(Node node){
+        return mirror(node,node);
+    }
+
+    static Node predecessor;
+    static Node successor;
+    static int state;
+    public static void predsucc(Node node,int data){
+        if(state==0){
+            if(node.data==data)state=1;
+            else predecessor=node;
+        }else if(state==1){
+            state=2;
+            successor=node;
+        }
+        for (Node child:node.children){
+            predsucc(child,data);
+        }
+    }
+
+    static int ceil=Integer.MAX_VALUE;
+    static int floor=Integer.MIN_VALUE;
+    private static void ceilFloor(Node node,int data){
+        if(node.data<data){
+            floor=Math.max(node.data,floor);
+        }else if(node.data>data) ceil=Math.min(node.data,ceil);
+        for(Node child:node.children){
+            ceilFloor(child,data);
+        }
+    }
+
     public static void main(String[] args) {
-//        int[] a={10,20,40,-1,50,-1,-1,30,60,-1,70,-1,-1};
-        int[] a={10,20,40,80,-1,90,-1,-1,50,-1,-1,30,60,-1,70,-1,-1};
+
+        int[] a={10,20,40,-1,50,-1,-1,30,60,-1,70,-1,-1};
+//        int[] a={10,20,40,-1,-1,30,-1};
+//        int[] a={10,20,40,80,-1,90,-1,-1,50,-1,-1,30,60,-1,70,-1,-1};
         int[] b={10,20,40,50,-1,-1,30,60,-1,70,80,-1,90,-1,-1,-1};
 //        int[] b={22,21,45,-1,10,-1,-1,0,630,-1,790,-1,-1};
 //        int[] a={10};
@@ -282,6 +330,14 @@ public class CustomTree {
 //        System.out.println(LCA(root,60,30));
 //        System.out.println(distanceBetweenNodes(root,60,70));
 //        System.out.println(similar(root,root2));
-        System.out.println(mirror(root,root2));
+//        System.out.println(mirror(root,root2));
+//        System.out.println(isSymmetric(root));
+//        multisolver(root,0);
+//        System.out.println("Height: "+height);
+//        System.out.println("max: "+max);
+//        System.out.println("min: "+min);
+        ceilFloor(root,30);
+        System.out.println("ceil: "+ceil);
+        System.out.println("floor: "+floor);
     }
 }
