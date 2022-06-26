@@ -1,5 +1,6 @@
 package com.company.HeapsHashMapPepCoding;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.PriorityQueue;
@@ -23,6 +24,7 @@ public class Revision {
         System.out.println( maxProduct(a));
 
     }
+
     public static void maxFC(String s){
         HashMap<Character,Integer> m=new HashMap<>();
 
@@ -35,7 +37,6 @@ public class Revision {
                 m.put(c,nx);
             }
         }
-
         char maxfc=s.charAt(0);
         for (char c:m.keySet()){
             if(m.get(c)>m.get(maxfc))maxfc=c;
