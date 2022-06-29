@@ -1,4 +1,4 @@
-package com.company.DP_PepCoding;
+package com.company.DP_PepCodings;
 
 public class Tribonacci {
     public static void main(String[] args) {

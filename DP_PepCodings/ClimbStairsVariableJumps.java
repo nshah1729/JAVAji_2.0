@@ -1,6 +1,4 @@
-package com.company.DP_PepCoding;
-
-import java.util.Scanner;
+package com.company.DP_PepCodings;
 
 public class ClimbStairsVariableJumps {
     public static void main(String[] args) {
