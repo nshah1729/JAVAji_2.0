@@ -1,7 +1,6 @@
 public class ClimbStairs_DP {
     public static void main(String[] args) {
         int n=10;
-//        System.out.println(CountPaths(n));
 //        System.out.println(CountPathsDP(n,new int[n+1]));
         System.out.println(CountPathsDP_Tab(n));
     }
