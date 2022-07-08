@@ -1,6 +1,6 @@
 package _01KnapSack_DP;
 
-public class _01Knapsack_DP {
+public class _01Knapsack_OriginalProblem_DP {
     public static void main(String[] args) {
         int[] w={10,20,30};
         int[] val={60,100,120};
