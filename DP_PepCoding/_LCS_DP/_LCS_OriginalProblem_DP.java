@@ -14,7 +14,8 @@ public class _LCS_OriginalProblem_DP {
             for (int j = 0; j < dp[0].length; j++)
                 dp[i][j] = -1;
         }
-        System.out.println("The length of LCS is "+findMemo(a,b,a.length(),b.length(),dp));
+//        System.out.println("The length of LCS is "+findMemo(a,b,a.length(),b.length(),dp));
+        System.out.println("The length of LCS is "+findTab(a,b,a.length(),b.length()));
     }
 
     private static int findRecursion(String a, String b,int n,int m) {
@@ -35,7 +36,17 @@ public class _LCS_OriginalProblem_DP {
             return Math.max(dp[n][m-1]=findMemo(a,b,n,m-1,dp),dp[n-1][m]=findMemo(a,b,n-1,m,dp));
         }
     }
-//    public static int findTab(String a, String b,int n,int m){
-//
-//    }
+    public static int findTab(String a, String b,int n,int m){
+        int[][] dp=new int[n+1][m+1];
+        for (int i = 0; i < n + 1; i++) {
+            for (int j = 0; j < m + 1; j++) {
+                if(i==0||j==0)dp[i][j]=0;
+                else if(a.charAt(i-1)==b.charAt(j-1))dp[i][j]=1+dp[i-1][j-1];
+                else{
+                    dp[i][j]=Math.max(dp[i-1][j],dp[i][j-1]);
+                }
+            }
+        }
+        return dp[n][m];
+    }
 }
