@@ -11,7 +11,9 @@ public class PrintLCSubString_Var1_DP {
         System.out.println("The length of LCS is "+findTab(a,b,a.length(),b.length()));
     }
 
-    private static String findTab(String a, String b, int length, int length1) {
-        return "fgd";
+    private static int findTab(String a, String b, int n, int m) {
+        if(n==0||m==0)return 0;
+        if(a.charAt(n-1)==b.charAt(m-1))return 1+findTab(a,b,n-1,m-1);
+        else return 0;
     }
 }
